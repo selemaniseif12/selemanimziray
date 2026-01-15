@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Selemani Seif Mziray – Data Analyst & Researcher</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --accent: #38bdf8;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --highlight: #22c55e;
+      --font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background: radial-gradient(circle at top, #1e293b 0, #020617 55%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      padding: 2.5rem 1.5rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(to bottom right, rgba(56,189,248,0.08), transparent);
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+      gap: 2rem;
+      align-items: center;
+    }
+    @media (max-width: 800px) {
+      .hero { grid-template-columns: 1fr; }
+    }
+    .hero-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+    .tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.4);
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    .tag-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--highlight);
+      box-shadow: 0 0 10px rgba(34,197,94,0.8);
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    .btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      font-size: 0.95rem;
+      cursor: pointer;
+      background: transparent;
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .btn-primary {
+      background: linear-gradient(to right, #0ea5e9, #22c55e);
+      border-color: transparent;
+      color: #0b1120;
+      font-weight: 600;
+    }
+    .btn span.icon {
+      font-size: 1.1rem;
+    }
+    .hero-card {
+      background: radial-gradient(circle at top left, rgba(56,189,248,0.18), rgba(15,23,42,0.95));
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      border: 1px solid rgba(148,163,184,0.4);
+      box-shadow: 0 18px 45px rgba(15,23,42,0.9);
+    }
+    .hero-card h3 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+    .hero-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+    .hero-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.5);
+      color: var(--muted);
+      background: rgba(15,23,42,0.8);
+    }
+    main {
+      padding: 2rem 1.5rem 3rem;
+    }
+    section {
+      margin-bottom: 2.5rem;
+    }
+    h2.section-title {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      border-left: 3px solid var(--accent);
+      padding-left: 0.6rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 1rem;
+      padding: 1.25rem;
+      border: 1px solid var(--border);
+    }
+    .card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.4rem;
+    }
+    .card small {
+      display: block;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .card p {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+    }
+    ul {
+      list-style: none;
+      margin-top: 0.4rem;
+    }
+    ul li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+    ul li::before {
+      content: "• ";
+      color: var(--accent);
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 900px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+    .badge {
+      font-size: 0.8rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(55,65,81,0.9);
+      color: var(--muted);
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+      background: #020617;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container hero">
+      <div>
+        <div class="tagline">
+          <span class="tag-dot"></span>
+          <span>AI‑driven Data Analyst & Applied Physicist</span>
+        </div>
+        <h1 class="hero-title">Selemani Seif Mziray</h1>
+        <p class="hero-subtitle">
+          Data analyst with a strong foundation in AI‑driven analytics, Python, SQL, and biosensor market intelligence,
+          backed by 15+ years of research in sensors, materials, and advanced diagnostics.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            <span class="icon">📊</span>
+            <span>View Data & AI Projects</span>
+          </a>
+          <a href="#research" class="btn">
+            <span class="icon">🔬</span>
+            <span>Research & Patents</span>
+          </a>
+          <a href="#contact" class="btn">
+            <span class="icon">📨</span>
+            <span>Contact</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Profile Snapshot</h3>
+        <p>
+          Over the past four months, I have focused on modern data analytics—combining SQL, Python‑AI, APIs, and
+          Large Language Models to extract insights, forecast trends, and build simple AI agents.
+        </p>
+        <p>
+          This builds on a long track record in nanosystems, biosensors, thermoelectrics, and NASA‑supported research.
+        </p>
+        <div class="hero-pill-row">
+          <span class="pill">Python‑AI & LLMs (GPT‑5)</span>
+          <span class="pill">SQL & Data Analytics</span>
+          <span class="pill">Biosensor Market Forecasting</span>
+          <span class="pill">COMSOL Multiphysics</span>
+          <span class="pill">Scientific Research & Patents</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <!-- Data & AI Projects -->
+      <section id="projects">
+        <h2 class="section-title">Data & AI Projects</h2>
+        <div class="grid">
+          <div class="card">
+            <small>Project 1 · SQL · Excel · GPT‑5</small>
+            <h3>Grocery Database Analysis</h3>
+            <p>
+              Analyzed transaction and product‑area tables using SQL, then refined visualizations in Excel and GPT‑5
+              (Chart) to identify top customers, category performance, and revenue concentration.
+            </p>
+            <ul>
+              <li>Ranked customers by total spend and category contribution.</li>
+              <li>Non‑food products ≈48% of total sales—primary revenue driver.</li>
+              <li>Identified underperforming categories (e.g., vegetables) for optimization.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <small>Project 2 · Python‑AI · Finance</small>
+            <h3>Stock Market Analysis of Four Major Banks</h3>
+            <p>
+              Evaluated stock trends (2018–2025) for BMO, TD, AXP, and BAC using Python‑AI, guided by ChatGPT/Coursera
+              coaching and executed in a Jupyter notebook.
+            </p>
+            <ul>
+              <li>Detected performance trends and volatility across institutions.</li>
+              <li>Insights aligned closely with official bank data.</li>
+              <li>Demonstrated reliability of AI‑driven financial analytics.</li>
+            </ul>
+            <p style="margin-top:0.4rem;font-size:0.85rem;">
+              Full analysis: <a href="https://www.linkedin.com/posts/selemani-mziray-751010343_stock-market-analysis-of-four-major-banks-activity-7396019048461012992-ExkS//" target="_blank">LinkedIn article</a>
+            </p>
+          </div>
+
+          <div class="card">
+            <small>Project 3 · Python‑AI · Market Forecasting</small>
+            <h3>Prediction of Biosensor Market Trends to 2035</h3>
+            <p>
+              Used Python‑AI to analyze biosensor market data (2020–2025) and forecast trends through 2035, validating
+              results against established market reports.
+            </p>
+            <ul>
+              <li>Automated market trend analysis with well‑crafted prompts.</li>
+              <li>Generated Python‑ready forecasting code via GPT‑5.</li>
+              <li>Streamlined research from hours to minutes.</li>
+            </ul>
+            <p style="margin-top:0.4rem;font-size:0.85rem;">
+              Full article: <a href="https://www.linkedin.com/posts/selemani-mziray-751010343_prediction-of-biosensor-market-trends-by-activity-7397086029054377984-X5q8/" target="_blank">LinkedIn article</a>
+            </p>
+          </div>
+
+          <div class="card">
+            <small>Project 4 · LLM · API · Agents</small>
+            <h3>AI Agent for Trip Activity Suggestions</h3>
+            <p>
+              Built a simple AI agent using Python, LLM libraries, and an API key to generate detailed travel itineraries
+              from CSV‑based flight and trip data.
+            </p>
+            <ul>
+              <li>Integrated LLM (e.g., llama3.2 via OllamaLLM) with Python.</li>
+              <li>Used structured prompts to create an 8‑day NYC itinerary.</li>
+              <li>Demonstrated foundational skills for more advanced agentic AI.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research & Patents -->
+      <section id="research">
+        <h2 class="section-title">Research, Sensors & Advanced Materials</h2>
+        <div class="grid">
+          <div class="card">
+            <small>Project 5 · Biosensors · QCM · Patents</small>
+            <h3>Ultrasensitive High‑Q AT‑Cut Quartz Microbalance Sensor</h3>
+            <p>
+              Co‑developed an ultrasensitive QCM‑based biosensor for detecting infectious diseases, environmental
+              contaminants, and cardiac biomarkers (troponins) at picogram–femtogram levels.
+            </p>
+            <ul>
+              <li>Detection in under 10 seconds—before infection or physiological damage.</li>
+              <li>Extensive use of COMSOL Multiphysics and nanofabrication facilities.</li>
+              <li>Resulted in two patents now being commercialized.</li>
+            </ul>
+            <p style="margin-top:0.4rem;font-size:0.85rem;">
+              Patents:
+              <a href="https://patentimages.storage.googleapis.com/44/d5/f5/3e1186c38b0a06/US10830738.pdf" target="_blank">US10830738</a> ·
+              <a href="https://patentimages.storage.googleapis.com/19/a0/98/54abbea587e949/US20200173898A1.pdf" target="_blank">US20200173898A1</a>
+            </p>
+          </div>
+
+          <div class="card">
+            <small>Project 6 · Thermoelectrics · COMSOL</small>
+            <h3>Efficiency Factors & Internal Resistance of Thermoelectric Materials</h3>
+            <p>
+              Modeled a single‑leg micro thermoelectric generator in COMSOL to compute efficiency factors (ϕ) and
+              internal resistances, showing that ZT alone is insufficient for system‑level efficiency.
+            </p>
+            <ul>
+              <li>Provided a more realistic framework for comparing TE materials.</li>
+              <li>Highlighted the importance of operating conditions and internal losses.</li>
+            </ul>
+            <p style="margin-top:0.4rem;font-size:0.85rem;">
+              Publication: <a href="https://onlinelibrary.wiley.com/doi/10.1002/er.3584" target="_blank">Energy Research Journal</a>
+            </p>
+          </div>
+
+          <div class="card">
+            <small>Project 7 · Piezoelectrics · Defense</small>
+            <h3>Voltage Transformation in Unloaded Piezoelectric Transformers</h3>
+            <p>
+              Developed solid‑state piezoelectric transformers for missile‑defense payload applications as part of a
+              NASA Missile Defense System–sponsored PhD research program.
+            </p>
+            <ul>
+              <li>Studied voltage transformation behavior in unloaded conditions.</li>
+              <li>Collaborated across physics and electrical engineering disciplines.</li>
+            </ul>
+            <p style="margin-top:0.4rem;font-size:0.85rem;">
+              Publication: <a href="https://www.tandfonline.com/doi/abs/10.1080/00150190490891300" target="_blank">Ferroelectrics Journal</a>
+            </p>
+          </div>
+
+          <div class="card">
+            <small>Project 8 · Crystal Growth · NASA</small>
+            <h3>Effect of Cr(III) Impurity on Crystal Growth Kinetics</h3>
+            <p>
+              Investigated impurity incorporation in KDP and TGS crystals grown in ground‑based and microgravity
+              environments at NASA’s Marshall Space Flight Center.
+            </p>
+            <ul>
+              <li>Analyzed growth kinetics and impurity levels in crystal matrices.</li>
+              <li>Supported by NASA as part of a master’s thesis in Applied Physics.</li>
+            </ul>
+            <p style="margin-top:0.4rem;font-size:0.85rem;">
+              Publication: <a href="https://www.sciencedirect.com/science/article/abs/pii/S0167577X03006621?via%3Dihub" target="_blank">Materials Letters</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education & Certifications -->
+      <section id="education">
+        <h2 class="section-title">Education & Certifications</h2>
+        <div class="two-col">
+          <div class="card">
+            <small>Education</small>
+            <h3>Academic Background</h3>
+            <p><strong>Diploma, Nanosystem Engineering Technology</strong><br />
+              Northern Alberta Institute of Technology (NAIT), Edmonton, Alberta, Canada<br />
+              <span style="color:var(--muted);font-size:0.9rem;">2021–2024</span>
+            </p>
+            <p style="margin-top:0.7rem;">
+              <strong>PhD, Applied Physics</strong><br />
+              Alabama A&M University, Huntsville, Alabama, USA<br />
+              <span style="color:var(--muted);font-size:0.9rem;">2002–2005</span>
+            </p>
+          </div>
+          <div class="card">
+            <small>Certificates</small>
+            <h3>Professional Development</h3>
+            <ul>
+              <li>SQL Data Analytics Certificate – Data Science Infinity (August 2025)</li>
+              <li>DeepLearning.AI Certificate – Coursera / Stanford University (October 2025)</li>
+              <li>Sensor Science and Technology – NSF‑sponsored program (2004)</li>
+            </ul>
+            <div class="badge-row">
+              <span class="badge">SQL & Databases</span>
+              <span class="badge">Deep Learning Foundations</span>
+              <span class="badge">Sensor Technology</span>
+              <span class="badge">AI‑Driven Analytics</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <div class="card">
+          <p style="margin-bottom:0.6rem;">
+            I am open to opportunities in data analytics, AI‑driven decision support, biosensor market intelligence,
+            and research‑driven innovation roles.
+          </p>
+          <p style="font-size:0.9rem;color:var(--muted);">
+            You can reach me via:
+          </p>
+          <ul>
+            <li>Email: <em>(add your preferred email here)</em></li>
+            <li>Location: Morinville, Alberta, Canada</li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/selemani-mziray-751010343" target="_blank">linkedin.com/in/selemani-mziray-751010343</a></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Selemani Seif Mziray · Data Analytics · AI · Sensors & Materials
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
