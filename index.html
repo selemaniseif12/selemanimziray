@@ -1,315 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Dr. Selemani Mziray – AI Data Analytics</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Selemani Mziray – AI & Data Analytics</title>
 
-    body {
-      background: #0b1020;
-      color: #f5f5f5;
-      line-height: 1.6;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f3f6fb;
+            color: #222;
+        }
 
-    header {
-      background: linear-gradient(135deg, #111827, #1f2937);
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      border-bottom: 1px solid #374151;
-    }
+        header {
+            background: linear-gradient(135deg, #003366, #0077cc);
+            color: white;
+            padding: 30px 15px;
+            text-align: center;
+        }
 
-    header h1 {
-      font-size: 2rem;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
-    }
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
 
-    header p {
-      color: #9ca3af;
-      font-size: 0.95rem;
-    }
+        header p {
+            margin: 8px 0 0;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
 
-    nav {
-      margin-top: 1.5rem;
-    }
+        nav {
+            background: #004a99;
+            padding: 10px;
+            text-align: center;
+        }
 
-    nav a {
-      color: #e5e7eb;
-      text-decoration: none;
-      margin: 0 0.75rem;
-      font-size: 0.9rem;
-      padding-bottom: 0.2rem;
-      border-bottom: 2px solid transparent;
-    }
+        nav a {
+            color: white;
+            margin: 0 18px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+        }
 
-    nav a:hover {
-      border-bottom-color: #3b82f6;
-      color: #ffffff;
-    }
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-    main {
-      max-width: 960px;
-      margin: 2rem auto 3rem;
-      padding: 0 1.5rem;
-    }
+        .section {
+            padding: 35px 20px;
+            max-width: 950px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
 
-    section {
-      margin-bottom: 2.5rem;
-      padding-bottom: 2rem;
-      border-bottom: 1px solid #1f2933;
-    }
+        h2 {
+            color: #003366;
+            margin-top: 0;
+        }
 
-    section:last-of-type {
-      border-bottom: none;
-      padding-bottom: 0;
-    }
+        h3 {
+            color: #0055a5;
+            margin-bottom: 6px;
+        }
 
-    h2 {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      color: #f9fafb;
-      border-left: 4px solid #3b82f6;
-      padding-left: 0.6rem;
-    }
+        .project {
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e2e6f0;
+        }
 
-    h3 {
-      font-size: 1.1rem;
-      margin-top: 1.2rem;
-      margin-bottom: 0.4rem;
-      color: #e5e7eb;
-    }
+        .project:last-child {
+            border-bottom: none;
+        }
 
-    p {
-      margin-bottom: 0.6rem;
-      color: #d1d5db;
-      font-size: 0.95rem;
-    }
+        ul {
+            padding-left: 20px;
+        }
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.2rem;
-      margin-top: 0.8rem;
-    }
+        a {
+            color: #0055a5;
+        }
 
-    .project-card {
-      background: #111827;
-      border: 1px solid #1f2937;
-      border-radius: 8px;
-      padding: 1rem;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
-    }
+        a:hover {
+            text-decoration: underline;
+        }
 
-    .project-card h3 {
-      margin-top: 0;
-    }
+        footer {
+            text-align: center;
+            padding: 18px 10px;
+            background: #003366;
+            color: white;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
 
-    .project-meta {
-      font-size: 0.85rem;
-      color: #9ca3af;
-      margin-bottom: 0.4rem;
-    }
+        @media (max-width: 700px) {
+            nav a {
+                display: inline-block;
+                margin: 6px 10px;
+            }
 
-    a {
-      color: #60a5fa;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    ul {
-      margin-left: 1.2rem;
-      margin-top: 0.4rem;
-      margin-bottom: 0.6rem;
-    }
-
-    li {
-      margin-bottom: 0.25rem;
-      font-size: 0.95rem;
-      color: #d1d5db;
-    }
-
-    .contact-item {
-      margin-bottom: 0.4rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem 1rem 2rem;
-      font-size: 0.8rem;
-      color: #6b7280;
-      border-top: 1px solid #1f2937;
-      background: #020617;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.6rem;
-      }
-      nav a {
-        display: inline-block;
-        margin: 0.25rem 0.5rem;
-      }
-    }
-  </style>
+            .section {
+                margin: 15px 10px;
+                padding: 25px 15px;
+            }
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>Dr. Selemani Mziray</h1>
-    <p>AI‑Driven Data Analyst · Data Science & Analytics · Python‑AI · SQL · Intelligent Agents</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#research">Research & Accomplishments</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <main>
-    <!-- About -->
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        Dr. Selemani Mziray is an AI‑driven data analyst specializing in data science and analytics.
+<body>
+
+<header>
+    <h1>Dr. Selemani Mziray</h1>
+    <p>AI‑Driven Data Analyst · Data Science & Analytics · Predictive Modeling · Intelligent Agents</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#research">Research & Accomplishments</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="section" id="about">
+    <h2>About</h2>
+    <p>
+        Dr. Selemani Mziray is an AI-driven data analyst specializing in data science and analytics.
         He is certified in prompt engineering, predictive modeling, Python‑AI research, consulting,
         SQL analytics, intelligent agent design, DeepLearning.AI, and SQL Data Analytics.
-      </p>
-      <p>
         His work spans stock‑market forecasting, biosensor industry trend prediction, and applied AI
         solutions for real‑world decision‑making.
-      </p>
-    </section>
+    </p>
+</div>
 
-    <!-- Projects -->
-    <section id="projects">
-      <h2>Projects</h2>
+<div class="section" id="projects">
+    <h2>Projects</h2>
 
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <div class="project-card">
-          <h3>Project 1: Grocery Database Analysis</h3>
-          <p class="project-meta">Python‑AI · GPT‑5 · Data Visualization</p>
-          <p>
-            This project uses Python‑AI and GPT‑5 to analyze customer purchasing patterns, identify
-            the customer with the highest total sales cost, and highlight the highest and lowest
-            sales costs across product categories.
-          </p>
-          <p>
-            The analysis includes pie‑chart and histogram‑based insights to reveal spending
-            distribution and category‑level performance.
-          </p>
-        </div>
+    <div class="project">
+        <h3>Project 1: Grocery Database Analysis</h3>
+        <p>
+            This project uses Python‑AI and GPT‑5 to analyze customer purchasing patterns, identify the
+            customer with the highest total sales cost, and highlight the highest and lowest sales costs
+            across product categories. The analysis includes pie‑chart and histogram‑based insights.
+        </p>
+    </div>
 
-        <!-- Project 2 -->
-        <div class="project-card">
-          <h3>Project 2: Stock Market Analysis of Four Major Banks</h3>
-          <p class="project-meta">Time‑Series Forecasting · Volatility · GPT‑5 Workflow</p>
-          <p>
+    <div class="project">
+        <h3>Project 2: Stock Market Analysis of Four Major Banks</h3>
+        <p>
             A Python‑AI forecasting model analyzing long‑term stock performance for four major banks.
-            The workflow includes trend decomposition, volatility analysis, and predictive modeling
-            using GPT‑5‑assisted pipelines.
-          </p>
-          <p>
+            Includes trend decomposition, volatility analysis, and predictive modeling using GPT‑5‑assisted workflows.
+        </p>
+        <p>
             <strong>Project Link:</strong>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener">
-              Stock Market Analysis – LinkedIn
+            <a href="https://www.linkedin.com/posts/selemani-mziray-751010343_stock-market-analysis-of-four-major-banks-activity-7396019048461012992-ExkS/"
+               target="_blank">
+                View project on LinkedIn
             </a>
-          </p>
-        </div>
+        </p>
+    </div>
 
-        <!-- Project 3 -->
-        <div class="project-card">
-          <h3>Project 3: Biosensor Market Trend Prediction (2035)</h3>
-          <p class="project-meta">Market Forecasting · Regression · Python‑AI</p>
-          <p>
-            A long‑term forecasting model predicting biosensor industry growth to 2035 using
-            Python‑AI, regression modeling, and market‑signal analysis.
-          </p>
-          <p>
+    <div class="project">
+        <h3>Project 3: Biosensor Market Trend Prediction (2035)</h3>
+        <p>
+            A long‑term forecasting model predicting biosensor industry growth to 2035 using Python‑AI,
+            regression modeling, and market‑signal analysis.
+        </p>
+        <p>
             <strong>Project Link:</strong>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener">
-              Biosensor Market Prediction – LinkedIn
+            <a href="https://www.linkedin.com/posts/selemani-mziray-751010343_prediction-of-biosensor-market-trends-by-activity-7397086029054377984-X5q8/"
+               target="_blank">
+                View project on LinkedIn
             </a>
-          </p>
-        </div>
+        </p>
+    </div>
 
-        <!-- Project 4 -->
-        <div class="project-card">
-          <h3>Project 4: AI Trip‑Activity Recommendation Agent</h3>
-          <p class="project-meta">Recommender Systems · APIs · GPT‑5</p>
-          <p>
-            A custom AI agent built using Python, GPT‑5, and API‑driven logic to recommend trip
-            activities based on user preferences, location, and constraints.
-          </p>
-          <p>
+    <div class="project">
+        <h3>Project 4: AI Trip‑Activity Recommendation Agent</h3>
+        <p>
+            A custom AI agent built using Python, GPT‑5, and API‑driven logic to recommend trip activities
+            based on user preferences, location, and constraints.
+        </p>
+        <p>
             <strong>Project Link:</strong>
-            <a href="#" target="_blank" rel="noopener">
-              Add your link here
+            <a href="https://selemaniseif12.github.io/selemanimziray/" target="_blank">
+                View AI Trip‑Activity Agent
             </a>
-          </p>
-        </div>
-      </div>
-    </section>
+        </p>
+    </div>
+</div>
 
-    <!-- Research & Accomplishments -->
-    <section id="research">
-      <h2>Research Articles & Accomplishments</h2>
+<div class="section" id="research">
+    <h2>Research Articles & Accomplishments</h2>
 
-      <h3>Patents & Technical Contributions</h3>
-      <ul>
+    <h3>Patents & Technical Contributions</h3>
+    <ul>
         <li>US Patent 10830738</li>
         <li>US Patent Application 20200173898A1</li>
-      </ul>
+    </ul>
 
-      <h3>Peer‑Reviewed Publications</h3>
-      <ul>
+    <h3>Peer‑Reviewed Publications</h3>
+    <ul>
         <li>Wiley Journal Publication</li>
         <li>Taylor &amp; Francis Publication</li>
         <li>ScienceDirect Publication</li>
-      </ul>
-    </section>
+    </ul>
+</div>
 
-    <!-- Contact -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <p class="contact-item">
-        <strong>Email:</strong>
+<div class="section" id="contact">
+    <h2>Contact</h2>
+    <p><strong>GitHub Website:</strong>
+        <a href="https://selemaniseif12.github.io/selemanimziray/" target="_blank">
+            https://selemaniseif12.github.io/selemanimziray/
+        </a>
+    </p>
+    <p><strong>Email:</strong>
         <a href="mailto:selemaniseif1974@gmail.com">selemaniseif1974@gmail.com</a>
-      </p>
-      <p class="contact-item">
-        <strong>LinkedIn:</strong>
-        <a href="https://www.linkedin.com/in/selemani-mziray-751010343/?originalSubdomain=ca"
-           target="_blank" rel="noopener">
-          linkedin.com/in/selemani-mziray-751010343
+    </p>
+    <p><strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/selemani-mziray-751010343/?originalSubdomain=ca" target="_blank">
+            LinkedIn Profile
         </a>
-      </p>
-      <p class="contact-item">
-        <strong>Website:</strong>
-        <a href="https://www.piezo-femtotechnology-sensors-inc.com/"
-           target="_blank" rel="noopener">
-          piezo-femtotechnology-sensors-inc.com
+    </p>
+    <p><strong>Company Website:</strong>
+        <a href="https://www.piezo-femtotechnology-sensors-inc.com/" target="_blank">
+            https://www.piezo-femtotechnology-sensors-inc.com/
         </a>
-      </p>
-    </section>
-  </main>
+    </p>
+</div>
 
-  <footer>
-    &copy; <span id="year"></span> Dr. Selemani Mziray · AI‑Driven Data Analytics
-  </footer>
+<footer>
+    © 2026 Dr. Selemani Mziray · AI & Data Analytics
+</footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
+
+
+
 
 
